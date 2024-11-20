@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { getToken, removeToken } from "./token"
+import router from "@/router"
 
 // Create an instance of axios with custom configuration
 const request = axios.create({
@@ -9,6 +11,10 @@ const request = axios.create({
 // Add a request interceptor
 request.interceptors.request.use((config) => {
     // Modify or log the request before it is sent
+    const token = getToken()
+    if (token) {
+        config.headers.Authorization = "Bearer " + token
+    }
     return config
 }, (error) => {
     // Handle errors in the request
@@ -21,8 +27,12 @@ request.interceptors.response.use((response) => {
     // Process the response data before returning
     return response.data
 }, (error) => {
-    // This function is triggered if the response status is outside the 2xx range
-    // Handle errors in the response
+    console.dir(error)
+    if (error.response.status === 401) {
+        removeToken()
+        router.navigate('/login')
+        window.location.reload()
+    }
     return Promise.reject(error)
 })
 

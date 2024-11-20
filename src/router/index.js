@@ -2,16 +2,23 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import Layout from '@/pages/Layout'
 import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import AuthRoute from '@/components/AuthRoute'
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />
+        element: <AuthRoute><Layout /></AuthRoute>
     },
     {
         path: '/login',
         element: <Login />
-    }
+    },
+    {
+        path: '/register',
+        element: <Register />
+    },
+
 ])
 
 export default router

@@ -1,18 +1,22 @@
 import './index.scss'
-import { Card, Form, Input, Button } from 'antd'
-import { message } from 'antd'
-import useStore from '@/store'
+import { Card, Form, Input, Button, message } from 'antd'
 import { fetchLogin } from '@/store/module/user'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
     const onFinish = async formValue => {
-        await dispatch(fetchLogin(formValue))
-        navigate('/')
-        message.success('Login Success')
+
+        // 执行登录操作
+        await dispatch(fetchLogin(formValue));
+
+        // 登录成功，跳转到首页，并显示登录成功消息
+        message.success('Login Success');
+        navigate('/');
     }
 
     return (
@@ -50,9 +54,11 @@ const Login = () => {
 
                     {/* Register button (additional action) */}
                     <Form.Item>
-                        <Button type="default" size="middle" block>
-                            Register
-                        </Button>
+                        <Link to="/register">
+                            <Button type="default" size="middle" block>
+                                Register
+                            </Button>
+                        </Link>
                     </Form.Item>
                 </Form>
             </Card>
