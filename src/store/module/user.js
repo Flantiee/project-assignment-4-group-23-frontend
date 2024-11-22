@@ -6,7 +6,8 @@ const userStore = createSlice({
     // 数据状态
     initialState: {
         token: getToken() || '',
-        userInfo: null
+        userInfo: null,
+        role: 'user'
     },
     // 同步修改方法
     reducers: {
@@ -16,6 +17,7 @@ const userStore = createSlice({
         },
         setUserInfo(state, action) {
             state.userInfo = action.payload
+            state.role = action.payload.role
         }
     }
 })

@@ -1,0 +1,209 @@
+// 颜色变量
+$primary-color: #1890ff;
+$secondary-color: #f0f2f5;
+$background-color: #f7f7f7;
+$card-background: #fff;
+$border-radius: 8px;
+$slider-range-color: #52c41a;
+$card-hover-shadow: rgba(0, 0, 0, 0.15);
+
+// 页面容器
+.product-list-container {
+  padding: 30px;
+  background-color: $background-color;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+
+  .page-title {
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  // 搜索区域
+.search-filters {
+    background-color: $card-background;
+    border-radius: $border-radius;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+  }
+  
+  .search-filters .ant-input,
+  .search-filters .ant-select,
+  .search-filters .ant-slider {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .search-filters .ant-slider {
+    margin-top: 10px;
+  }
+  
+  // 商品卡片
+  
+  .product-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);  // 默认四列布局
+      gap: 20px;
+      justify-content: space-between;
+  
+      .product-card {
+        background-color: $card-background;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+  
+        .ant-card-cover {
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+  
+        .product-card-body {
+          padding: 12px;
+          
+          h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+          }
+  
+          .product-price {
+            font-size: 16px;
+            color: #e74c3c;
+            margin-bottom: 10px;
+          }
+  
+          .product-description {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+        }
+      }
+  }
+  
+  
+  // 分页区域
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  
+    .ant-pagination-item {
+      border-radius: $border-radius;
+    }
+  
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      border-radius: $border-radius;
+    }
+  }
+  
+  // Loading Spinner
+  .spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .search-btn {
+    display: block;
+    margin:  0 auto;
+    width: 25%;
+    /* 确保表单输入框和按钮宽度自适应 */
+  }
+  
+  // 响应式调整
+  @media (max-width: 767px) {
+    .search-filters {
+      padding: 15px;
+    }
+  
+    .product-list {
+      display: block;
+    }
+  
+    .ant-card {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .page-title {
+      font-size: 24px;
+    }
+  
+    .pagination {
+      margin-top: 30px;
+    }
+
+    .search-btn {
+        width: 100%;
+        /* 确保表单输入框和按钮宽度自适应 */
+      }
+  }
+  
+  @media (max-width: 999px) and (min-width: 768px) {
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    
+      .ant-card {
+        width: 48%;
+        margin-bottom: 15px;
+      }
+    
+      .pagination {
+        margin-top: 30px;
+      }
+
+      .ant-btn {
+        display: block;
+        margin:  0 auto;
+        /* 确保表单输入框和按钮宽度自适应 */
+      }
+
+      .search-btn {
+        width: 50%;
+        /* 确保表单输入框和按钮宽度自适应 */
+      }
+    }
+  
+  @media (max-width: 1800px) and (min-width: 1000px) {
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .ant-card {
+      // width: 48%;
+      width: 30%;
+      margin-bottom: 15px;
+    }
+  
+    .pagination {
+      margin-top: 30px;
+    }
+  }
+}
+

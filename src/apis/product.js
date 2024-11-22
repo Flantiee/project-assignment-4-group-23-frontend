@@ -31,9 +31,9 @@ export function getProductDetailAPI(id) {
 }
 
 export function getProductListAPI(formData) {
-    const queryParams = new URLSearchParams(formData).toString();
     return request({
-        url: `/products/${queryParams}`,
-        method: 'GET'
+        url: `/products`,
+        method: 'GET',
+        params: formData
     })
 }

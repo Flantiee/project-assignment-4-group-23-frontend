@@ -1,3 +1,4 @@
+
 const TOKENKEY = 'token_key'
 
 function setToken(token) {
@@ -11,6 +12,8 @@ function getToken() {
 function removeToken() {
     return localStorage.removeItem(TOKENKEY)
 }
+
+
 
 export {
     setToken,
