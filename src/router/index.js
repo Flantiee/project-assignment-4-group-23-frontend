@@ -1,10 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import AuthRoute from '@/components/AuthRoute'
 import Layout from '@/pages/Layout'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import ProductDetail from '@/pages/ProductDetail'
-import AuthRoute from '@/components/AuthRoute'
+import Cart from '@/pages/cart'
+import Orders from '@/pages/Orders'
+import ProductModifier from '@/pages/ProductModifier'
+import UserInfo from '@/pages/UserInfo'
 
 const router = createBrowserRouter([
     {

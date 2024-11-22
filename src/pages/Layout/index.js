@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
+import HeaderNavBar from '@/components/HeaderNavBar/Index';
 import { createCartAPI } from '@/apis/cart';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
@@ -107,7 +108,9 @@ const Layout = () => {
     }, [filters.page]); // 只在 filters.page 变化时触发
 
     return (
+
         <div className="product-list-container">
+            <HeaderNavBar userRole={role} userInfo={userInfo} />
             <Title level={2} className="page-title">Product List</Title>
             <div className="search-filters">
                 <Row gutter={16} justify="space-between">
