@@ -55,8 +55,8 @@ const HeaderNavBar = ({ userInfo, userRole }) => {
                         </Menu.Item>
                         {/* 如果是管理员角色，显示创建商品页面 */}
                         {userRole === 'admin' && (
-                            <Menu.Item key="/create-product" icon={<AppstoreAddOutlined />} style={{ color: '#000' }}>
-                                <Link to="/create-product" style={{ color: '#000' }}>Add new Product</Link>
+                            <Menu.Item key="/product-modifier" icon={<AppstoreAddOutlined />} style={{ color: '#000' }}>
+                                <Link to="/product-modifier" style={{ color: '#000' }}>Add new Product</Link>
                             </Menu.Item>
                         )}
                     </>
