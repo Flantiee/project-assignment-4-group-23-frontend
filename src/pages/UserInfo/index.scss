@@ -1,0 +1,153 @@
+/* UserRegistrationForm.scss */
+.register {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: center/cover url('~@/assets/background.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* 确保背景图在其他内容下面 */
+  
+    .registration-form-container {
+      width: 100%;
+      max-width: 600px;
+      /* 最大宽度 */
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f7f4f4;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+    }
+  
+    .registration-form {
+      .ant-form-item-label {
+        font-weight: bold;
+      }
+  
+      .ant-btn-primary {
+        width: 100%;
+        /* 按钮宽度自适应 */
+        background-color: #4caf50;
+        border-color: #4caf50;
+  
+        &:hover {
+          background-color: #45a049;
+          border-color: #45a049;
+        }
+      }
+    }
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .button-container {
+        display: flex;  /* 使用 flexbox 布局 */
+        gap: 10px;      /* 设置按钮之间的间距 */
+        justify-content: flex-start; /* 按钮左对齐 */
+        margin-top: 20px;
+      }
+      
+      .submit-button {
+        padding: 5px 10px;  /* 调整按钮的内边距 */
+        font-size: 14px;     /* 调整字体大小 */
+        cursor: pointer;
+      }
+  
+    /* 优化响应式样式 */
+    @media (max-width: 1024px) {
+  
+      /* 在平板上，表单项应该适度缩小 */
+      .registration-form-container {
+        padding: 20px 15px;
+        /* 调整内边距 */
+      }
+  
+      .registration-form .ant-form-item {
+        margin-bottom: 20px;
+        /* 增加间距 */
+      }
+  
+      .ant-form-item-label {
+        font-size: 16px;
+        /* 标签字体适当缩小 */
+      }
+  
+      .ant-input,
+      .ant-select-selector,
+      .ant-btn {
+        width: 100%;
+        /* 确保表单输入框和按钮宽度自适应 */
+      }
+    }
+  
+    @media (max-width: 768px) {
+  
+      /* 在较小屏幕设备上（如手机），继续优化布局 */
+      .registration-form-container {
+        padding: 15px 10px;
+        /* 更小的内边距 */
+        margin: 20px;
+        /* 改为与屏幕边缘有一些距离 */
+      }
+  
+      .registration-form .ant-form-item {
+        margin-bottom: 15px;
+        /* 减少表单项之间的间距 */
+      }
+  
+      .ant-form-item-label {
+        font-size: 14px;
+        /* 标签字体再缩小一点 */
+      }
+  
+      /* 确保按钮宽度适配 */
+      .ant-btn-primary {
+        font-size: 16px;
+        /* 增大按钮文字 */
+        height: 40px;
+        /* 确保按钮高度合适 */
+      }
+  
+      .ant-input,
+      .ant-select-selector {
+        height: 40px;
+        /* 输入框的高度也要合适 */
+        font-size: 14px;
+        /* 输入框的字体稍微缩小 */
+      }
+    }
+  
+    @media (max-width: 480px) {
+  
+      /* 在非常小的手机屏幕上，进一步调整 */
+      .registration-form-container {
+        padding: 10px;
+        margin: 10px;
+      }
+  
+      .registration-form .ant-form-item {
+        margin-bottom: 12px;
+      }
+  
+      .ant-form-item-label {
+        font-size: 13px;
+      }
+  
+      .ant-input,
+      .ant-select-selector,
+      .ant-btn-primary {
+        font-size: 14px;
+        /* 确保文字适应 */
+        height: 36px;
+        /* 输入框和按钮的高度进一步调整 */
+      }
+    }
+  }

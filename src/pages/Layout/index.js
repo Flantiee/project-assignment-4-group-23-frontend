@@ -94,8 +94,10 @@ const Layout = () => {
             message.success("Item added to cart")
     }
 
-    const handleAdminUpdateProduct = () => {
-
+    const toEditProductPage = (id) => {
+        // product_id
+        if (id != null)
+            navigate(`/edit-product/${id}`)
     }
 
     // useEffect(() => {
@@ -199,9 +201,9 @@ const Layout = () => {
                                                         <Button
                                                             color="default"
                                                             variant="solid"
-                                                            onClick={(e) => { e.stopPropagation(); handleAdminUpdateProduct() }} // 处理 admin 相关操作
+                                                            onClick={(e) => { e.stopPropagation(); toEditProductPage(product.id) }} // 处理 admin 相关操作
                                                         >
-                                                            Modify
+                                                            Edit
                                                         </Button>
                                                     </div>
                                                 </>

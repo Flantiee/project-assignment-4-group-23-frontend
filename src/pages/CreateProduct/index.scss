@@ -1,0 +1,31 @@
+.create-product-page {
+    background-image: url('~@/assets/background.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 50px;
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+  }
+  
+  .upload-thumbnail {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .upload-thumbnail img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 10px;
+  }

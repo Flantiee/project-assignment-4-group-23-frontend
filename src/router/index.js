@@ -7,8 +7,10 @@ import Register from '@/pages/Register'
 import ProductDetail from '@/pages/ProductDetail'
 import Cart from '@/pages/cart'
 import Orders from '@/pages/Orders'
-import ProductModifier from '@/pages/ProductModifier'
+import CreateProduct from '@/pages/CreateProduct'
+import EditProduct from '@/pages/EditProduct'
 import UserInfo from '@/pages/UserInfo'
+import AdminAuthRoute from '@/components/AdminAuthRoute'
 
 const router = createBrowserRouter([
     {
@@ -36,13 +38,18 @@ const router = createBrowserRouter([
         element: <Orders />
     },
     {
-        path: '/product-modifier',
-        element: <ProductModifier />
-    },
-    {
         path: '/user-info',
         element: <AuthRoute><UserInfo /></AuthRoute>
+    },
+    {
+        path: '/create-product',
+        element: <AdminAuthRoute><CreateProduct /></AdminAuthRoute>
+    },
+    {
+        path: '/edit-product/:id',
+        element: <AdminAuthRoute><EditProduct /></AdminAuthRoute>
     }
+
 
 ])
 

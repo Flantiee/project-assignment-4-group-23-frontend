@@ -10,7 +10,7 @@ const AuthRoute = ({ children }) => {
     const dispatch = useDispatch()
     // 如果存在 token 并且用户信息还未加载，触发用户信息获取的请求
     if (isToken && !userInfo) {
-        dispatch(fetchUserInfo(isToken)); // 假设传递 token
+        dispatch(fetchUserInfo()); // 假设传递 token
     }
 
 
