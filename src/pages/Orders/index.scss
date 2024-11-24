@@ -1,0 +1,89 @@
+// 主要样式变量
+$primary-color: #1890ff;
+$background-image: url('~@/assets/background.png'); // 设置背景图片 URL
+$empty-message-color: #555;
+$card-shadow: rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+// 背景图片
+.order-list-container {
+  background-image: $background-image;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+
+  .order-list-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    h1{
+        color:#333;
+    }
+  }
+
+  .spin-container {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .order-item {
+    margin-bottom: 20px;
+    .ant-card {
+      background-color: #ffffff;
+      border-radius: $border-radius;
+      box-shadow: 0 4px 8px $card-shadow;
+      padding: 16px;
+    }
+  }
+
+  .order-details {
+    font-size: 14px;
+    color: #333;
+    p {
+      margin: 8px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .back-button {
+    margin-top: 30px;
+    text-align: center;
+    .ant-btn {
+      font-size: 16px;
+      padding: 10px 30px;
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 767px) {
+  .order-list-header {
+    font-size: 24px;
+  }
+
+  .order-item {
+    margin-bottom: 10px;
+  }
+
+  .order-details {
+    font-size: 12px;
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .back-button .ant-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}

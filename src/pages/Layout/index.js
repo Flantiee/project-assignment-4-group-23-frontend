@@ -81,7 +81,7 @@ const Layout = () => {
 
     // Handle category change
     const handleCategoryChange = (value) => {
-        handleFilterChange({ category: value });
+        handleFilterChange({ category: value, page: 1 });
     };
 
     const toDetailPage = (id) => {
@@ -90,7 +90,7 @@ const Layout = () => {
     }
     const addToCart = async (id) => {
         const response = await createCartAPI({ user_id: userInfo.id, product_id: id, quantity: 1 })
-        if (response.status === 201)
+        if (response.status === 201 || response.status === 200)
             message.success("Item added to cart")
     }
 

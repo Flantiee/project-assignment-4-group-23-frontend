@@ -1,0 +1,59 @@
+.checkout-page {
+    background-image: url('https://via.placeholder.com/1500');  // 替换为实际背景图片链接
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 40px 0;
+  
+    .background-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .content-container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+    }
+  
+    .page-title {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+  
+    .ant-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+  
+    .ant-form-item-label {
+      font-weight: bold;
+    }
+  
+    .ant-btn {
+      border-radius: 5px;
+      font-size: 14px;  
+    }
+  
+    .ant-divider {
+      margin: 20px 0;
+    }
+  
+    .order-summary-col {
+      text-align: right;
+      font-weight: bold;
+    }
+  
+    @media (max-width: 768px) {
+      .content-container {
+        padding: 20px;
+      }
+    }
+  }
+  

@@ -25,7 +25,7 @@ export function deleteCartAPI(id) {
     })
 }
 
-export function getCartListPI(id) {
+export function getCartListAPI(id) {
     return request({
         url: `/cart/?id=${id}`,
         method: 'GET'

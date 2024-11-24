@@ -15,7 +15,7 @@ export function getPreviousCheckOutListAPI(id) {
     })
 }
 
-export function createCartAPI(id) {
+export function confirmCheckOutAPI(id) {
     return request({
         url: `/checkout?id=${id}`,
         method: 'POST'

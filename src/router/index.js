@@ -10,6 +10,7 @@ import Orders from '@/pages/Orders'
 import CreateProduct from '@/pages/CreateProduct'
 import EditProduct from '@/pages/EditProduct'
 import UserInfo from '@/pages/UserInfo'
+import CheckOut from '@/pages/CheckOut'
 import AdminAuthRoute from '@/components/AdminAuthRoute'
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         element: <Orders />
     },
     {
+        path: '/check-out',
+        element: <CheckOut />
+    },
+    {
         path: '/user-info',
         element: <AuthRoute><UserInfo /></AuthRoute>
     },
@@ -49,6 +54,7 @@ const router = createBrowserRouter([
         path: '/edit-product/:id',
         element: <AdminAuthRoute><EditProduct /></AdminAuthRoute>
     }
+
 
 
 ])
