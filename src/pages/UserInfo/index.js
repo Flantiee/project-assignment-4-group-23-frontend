@@ -26,7 +26,7 @@ const UserInfo = () => {
             address: userInfo.address,
             payment_method: userInfo.payment_method,
         });
-    }, [form]);
+    }, [userInfo]);
 
     // Handle form submission
     const onFinish = async (formValue) => {

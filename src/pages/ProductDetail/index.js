@@ -5,7 +5,7 @@ import { createCartAPI } from '@/apis/cart';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Card, Col, Row, Typography, Image, Tag, Space, Button, Skeleton, message } from 'antd';
-import CommentList from '@/components/CommentList/index.js';
+import CommentList from '@/components/CommentList/';
 const { Title, Text } = Typography;
 
 

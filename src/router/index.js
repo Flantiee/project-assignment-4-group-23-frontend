@@ -28,19 +28,19 @@ const router = createBrowserRouter([
     },
     {
         path: '/productdetail/:id',
-        element: <ProductDetail />
+        element: <AuthRoute><ProductDetail /></AuthRoute>
     },
     {
         path: '/cart',
-        element: <Cart />
+        element: <AuthRoute><Cart /></AuthRoute>
     },
     {
         path: '/orders',
-        element: <Orders />
+        element: <AuthRoute><Orders /></AuthRoute>
     },
     {
         path: '/check-out',
-        element: <CheckOut />
+        element: <AuthRoute><CheckOut /></AuthRoute>
     },
     {
         path: '/user-info',
