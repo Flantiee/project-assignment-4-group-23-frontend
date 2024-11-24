@@ -1,17 +1,20 @@
 // src/components/HeaderNavBar.js
-
 import React from 'react';
 import { Layout, Menu } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import { UserOutlined, ShoppingCartOutlined, AppstoreAddOutlined, HistoryOutlined, LoginOutlined, UserAddOutlined } from '@ant-design/icons';
 import { removeToken } from '@/util';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '@/store/module/user';
 const { Header } = Layout;
 
 const HeaderNavBar = ({ userInfo, userRole }) => {
     const location = useLocation(); // 获取当前的路由信息
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const handleLogout = () => {
+        dispatch(logout())
         removeToken()
         navigate('/login')
     }

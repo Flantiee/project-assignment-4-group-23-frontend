@@ -18,7 +18,6 @@ const Orders = () => {
                 const response = await getPreviousCheckOutListAPI(userId)
                 if (response.status === 200)
                     setOrders(response.data);
-                console.log(response)
             } catch (error) {
                 console.error('Error fetching orders:', error);
             } finally {

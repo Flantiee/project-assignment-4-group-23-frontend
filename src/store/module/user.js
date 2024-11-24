@@ -18,12 +18,17 @@ const userStore = createSlice({
         setUserInfo(state, action) {
             state.userInfo = action.payload
             state.role = action.payload.role
+        },
+        logout(state) {
+            state.token = ''
+            state.userInfo = null
+            state.role = 'user'
         }
     }
 })
 
 // 解构出actionCreater
-const { setToken, setUserInfo } = userStore.actions
+const { setToken, setUserInfo, logout } = userStore.actions
 
 // 获取reducer函数
 const userReducer = userStore.reducer
@@ -45,6 +50,7 @@ const fetchUserInfo = () => {
 }
 
 
-export { fetchLogin, fetchUserInfo, setToken }
+
+export { fetchLogin, fetchUserInfo, setToken, logout }
 
 export default userReducer

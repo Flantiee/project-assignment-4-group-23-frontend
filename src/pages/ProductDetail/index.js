@@ -5,11 +5,14 @@ import { createCartAPI } from '@/apis/cart';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Card, Col, Row, Typography, Image, Tag, Space, Button, Skeleton, message } from 'antd';
+import CommentList from '@/components/CommentList/index.js';
 const { Title, Text } = Typography;
 
 
 const ProductDetail = () => {
     const [product, setProduct] = useState(null);
+    const [brandName, setBrandName] = useState(null);
+    const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
     const userInfo = useSelector((state) => state.user.userInfo)
@@ -30,7 +33,11 @@ const ProductDetail = () => {
         const fetchProduct = async () => {
             try {
                 const response = await getProductDetailAPI(id);
-                setProduct(response.data);
+                if (response.status === 200) {
+                    setProduct(response.data);
+                    setReviews(response.reviews)
+                    setBrandName(response.data.brand)
+                }
             } catch (error) {
                 console.error('Error fetching product details:', error);
             } finally {
@@ -90,6 +97,7 @@ const ProductDetail = () => {
                     </Card>
                 </Col>
             </Row>
+            <CommentList reviews={reviews} brandName={brandName} />
         </div>
     );
 };
