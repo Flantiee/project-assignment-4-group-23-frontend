@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const { Title, Text } = Typography;
 
 const Cart = () => {
-    const userId = useSelector(state => state.user.userInfo.id); // get userId from redux
+    const userInfo = useSelector(state => state.user.userInfo); // get userId from redux
     const navigate = useNavigate()
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,17 +24,17 @@ const Cart = () => {
     useEffect(() => {
         const fetchCartItems = async () => {
             try {
-                const response = await getCartListAPI(userId);
+                const response = await getCartListAPI(userInfo.id);
                 setCartItems(response.data);
             } catch (error) {
-                message.error('Failed to Fetch CartList');
+
             } finally {
                 setLoading(false);
             }
         };
 
         fetchCartItems();
-    }, [userId]);
+    }, [userInfo]);
 
     // update cart
     const updateQuantity = async (id, quantity) => {
@@ -140,7 +140,7 @@ const Cart = () => {
                                     />
                                 </Col>
                                 <Col span={4} className="cart-item-total">
-                                    ¥{(item.price * item.quantity).toFixed(2)}
+                                    ${(item.price * item.quantity).toFixed(2)}
                                 </Col>
                                 <Col span={2} className="cart-item-delete">
                                     <Button
